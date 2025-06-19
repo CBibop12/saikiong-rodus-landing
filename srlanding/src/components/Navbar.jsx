@@ -28,7 +28,7 @@ function Navbar() {
 
                 <ul className={`navbar__links navbar__links--right ${isOpen ? 'navbar__links--open' : ''}`}>
                     <li><a href="#items" onClick={() => setIsOpen(false)}>{lang === 'ru' ? 'Предметы' : 'Items'}</a></li>
-                    <li><a href="#rules" onClick={() => setIsOpen(false)}>{lang === 'ru' ? 'Правила' : 'Rules'}</a></li>
+                    <li><a href="https://saikiongrodus.freeflarum.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>{lang === 'ru' ? 'Форум' : 'Forum'}</a></li>
                     <li><a href="#blog" onClick={() => setIsOpen(false)}>{lang === 'ru' ? 'Блог' : 'Blog'}</a></li>
                     <li><LanguageSwitcher /></li>
                 </ul>
