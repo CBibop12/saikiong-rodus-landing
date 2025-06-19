@@ -1,0 +1,21 @@
+@use 'main' as *;
+
+.rules {
+    padding: 4rem 0;
+    background: $dark;
+
+    &__heading {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        color: $primary;
+    }
+
+    &__content {
+        max-height: 400px;
+        overflow-y: auto;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        padding-right: 1rem;
+    }
+}

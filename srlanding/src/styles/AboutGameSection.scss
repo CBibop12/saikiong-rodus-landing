@@ -1,0 +1,32 @@
+@use 'main' as *;
+
+.about-game {
+    padding: 4rem 0;
+    background: lighten($dark, 2%);
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        align-items: center;
+    }
+
+    &__text {
+        h2 {
+            margin-bottom: 1rem;
+            color: $primary;
+        }
+
+        p+p {
+            margin-top: 1rem;
+        }
+    }
+
+    &__media {
+        img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+    }
+}

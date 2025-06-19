@@ -1,0 +1,17 @@
+@use 'main' as *;
+
+.lang-switcher {
+    background: none;
+    border: 1px solid $light;
+    color: $light;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+
+    &:hover {
+        background: $primary;
+        color: $dark;
+    }
+}

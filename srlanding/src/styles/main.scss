@@ -1,0 +1,89 @@
+// Color variables
+$primary: #ffd166;
+$secondary: #00ff84;
+$dark: #0d0d0d;
+$light: #fafafa;
+$accent: #4cc9f0;
+$max-width: 1200px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background: $dark;
+    color: $light;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: $max-width;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &--primary {
+        background: $primary;
+        color: $dark;
+
+        &:hover {
+            background: lighten($primary, 10%);
+        }
+    }
+
+    &--outline {
+        border: 2px solid $light;
+
+        &:hover {
+            background: $light;
+            color: $dark;
+        }
+    }
+}
+
+// Responsive helpers
+@mixin respond($breakpoint) {
+    @if $breakpoint ==sm {
+        @media (max-width: 640px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==md {
+        @media (max-width: 768px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint ==lg {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    }
+}
