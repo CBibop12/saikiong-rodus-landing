@@ -23,7 +23,7 @@ function Navbar() {
                 </ul>
 
                 <Link to="/" className="navbar__logo" onClick={() => setIsOpen(false)}>
-                    <img src={"/logo.svg"} alt="logo" />
+                    <img src={"/assets/images/logoWhite.svg"} alt="logo" />
                 </Link>
 
                 <ul className={`navbar__links navbar__links--right ${isOpen ? 'navbar__links--open' : ''}`}>
