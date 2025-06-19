@@ -95,7 +95,7 @@ function CharactersCarousel() {
                 {/* Выбранный персонаж */}
                 <div className="characters__selected">
                     <div className="characters__selected-image">
-                        <img src={`src/assets/characters/${selectedHero.image || 'logo.svg'}`} alt={lang === 'ru' ? selectedHero.nameRu : selectedHero.nameEn} />
+                        <img src={`/assets/characters/${selectedHero.image || 'logo.svg'}`} alt={lang === 'ru' ? selectedHero.nameRu : selectedHero.nameEn} />
                     </div>
                     <div className="characters__selected-info">
                         <h3 className="characters__selected-name">{lang === 'ru' ? selectedHero.nameRu : selectedHero.nameEn}</h3>
@@ -220,7 +220,7 @@ function CharactersCarousel() {
                             onClick={() => handleHeroSelect(hero)}
                             style={{ backgroundColor: typeColors[hero.type] || typeColors['Иной'] }}
                         >
-                            <img src={`src/assets/characters/${hero.image || 'logo.svg'}`} alt={lang === 'ru' ? hero.nameRu : hero.nameEn} />
+                            <img src={`/assets/characters/${hero.image || 'logo.svg'}`} alt={lang === 'ru' ? hero.nameRu : hero.nameEn} />
                             <div className="characters__grid-overlay">
                                 <span className="characters__grid-name">{lang === 'ru' ? hero.nameRu : hero.nameEn}</span>
                                 <span className="characters__grid-role">{getHeroType(hero)}</span>

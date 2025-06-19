@@ -100,7 +100,7 @@ function ItemsSection() {
                 {/* Выбранный предмет */}
                 <div className="items__selected">
                     <div className="items__selected-image">
-                        <img src={`src/assets/items/${selectedItem.image}`} alt={getItemName(selectedItem)} />
+                        <img src={`/assets/items/${selectedItem.image}`} alt={getItemName(selectedItem)} />
                     </div>
                     <div className="items__selected-info">
                         <h3 className="items__selected-name">{getItemName(selectedItem)}</h3>
@@ -119,31 +119,31 @@ function ItemsSection() {
                                 {getItemDescription(selectedItem, 'passiveAbility') && (
                                     <div className="items__ability">
                                         <h4>{lang === 'ru' ? 'Пассивная способность' : 'Passive Ability'}</h4>
-                                <p>{getItemDescription(selectedItem, 'passiveAbility')}</p>
-                            </div>
-                        )}
+                                        <p>{getItemDescription(selectedItem, 'passiveAbility')}</p>
+                                    </div>
+                                )}
 
-                        {getItemDescription(selectedItem, 'activeAbility') && (
-                            <div className="items__ability">
-                                <h4>{lang === 'ru' ? 'Активная способность' : 'Active Ability'}</h4>
-                                <p>{getItemDescription(selectedItem, 'activeAbility')}</p>
-                            </div>
-                        )}
+                                {getItemDescription(selectedItem, 'activeAbility') && (
+                                    <div className="items__ability">
+                                        <h4>{lang === 'ru' ? 'Активная способность' : 'Active Ability'}</h4>
+                                        <p>{getItemDescription(selectedItem, 'activeAbility')}</p>
+                                    </div>
+                                )}
 
-                        {getItemDescription(selectedItem, 'availability') && (
-                            <div className="items__availability">
-                                <h4>{lang === 'ru' ? 'Доступность' : 'Availability'}</h4>
-                                <p>{getItemDescription(selectedItem, 'availability')}</p>
-                                </div>
-                            )}
-                        </>
+                                {getItemDescription(selectedItem, 'availability') && (
+                                    <div className="items__availability">
+                                        <h4>{lang === 'ru' ? 'Доступность' : 'Availability'}</h4>
+                                        <p>{getItemDescription(selectedItem, 'availability')}</p>
+                                    </div>
+                                )}
+                            </>
                         )}
                         {selectedItem.shopType !== "Магический" && (
                             <>
-                            <div className="items__description">
-                                <h4>{lang === 'ru' ? 'Описание' : 'Description'}</h4>
-                                <p>{lang === 'ru' ? selectedItem.descriptionRu : selectedItem.descriptionEn}</p>
-                            </div>
+                                <div className="items__description">
+                                    <h4>{lang === 'ru' ? 'Описание' : 'Description'}</h4>
+                                    <p>{lang === 'ru' ? selectedItem.descriptionRu : selectedItem.descriptionEn}</p>
+                                </div>
                             </>
                         )}
 
@@ -156,8 +156,8 @@ function ItemsSection() {
                 </div>
 
                 {/* Фильтры и сортировка */}
-                    <div className="items__controls">
-                        <div className="items__search">
+                <div className="items__controls">
+                    <div className="items__search">
                         <input
                             type="text"
                             placeholder={lang === 'ru' ? 'Поиск предметов...' : 'Search items...'}
@@ -207,7 +207,7 @@ function ItemsSection() {
                                 onClick={() => handleItemSelect(item)}
                                 style={{ backgroundColor: shopTypeColors[item.shopType] || shopTypeColors['Магический'] }}
                             >
-                                <img src={`src/assets/items/${item.image}`} alt={getItemName(item)} />
+                                <img src={`/assets/items/${item.image}`} alt={getItemName(item)} />
                                 <div className="items__grid-overlay">
                                     <span className="items__grid-name">{getItemName(item)}</span>
                                     <span className="items__grid-shop">{getShopType(item)}</span>

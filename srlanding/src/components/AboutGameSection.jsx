@@ -16,7 +16,7 @@ function AboutGameSection() {
                 </div>
                 <div className="about-game__media">
                     <img
-                        src="src/assets/images/gameplay.png"
+                        src="/assets/images/gameplay.png"
                         alt="Gameplay screenshot"
                     />
                 </div>
