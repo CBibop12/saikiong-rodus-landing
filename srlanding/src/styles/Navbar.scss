@@ -77,6 +77,17 @@
             }
         }
 
+        .btn {
+            transition: all 0.3s ease;
+            color: $dark;
+            display: flex;
+            padding: 0.5rem 1.2rem;
+            &:hover {
+                background: rgba($primary, 0.1);
+                color: $primary;
+            }
+        }
+
         @include respond(sm) {
             position: fixed;
             top: 0;

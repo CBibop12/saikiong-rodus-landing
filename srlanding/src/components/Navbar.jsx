@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useLang } from '../i18n/LanguageContext'
 import '../styles/Navbar.scss'
-import { Menu as MenuIcon, X as CloseIcon } from 'lucide-react'
+import { Menu as MenuIcon, X as CloseIcon, User } from 'lucide-react'
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
     const { lang } = useLang()
+    const [hasToken, setHasToken] = useState(() => !!localStorage.getItem('srUserToken'))
 
     const toggleMenu = () => setIsOpen(!isOpen)
 
@@ -25,6 +26,12 @@ function Navbar() {
         }
     }, [isOpen])
 
+    useEffect(() => {
+        const handleStorage = () => setHasToken(!!localStorage.getItem('srUserToken'))
+        window.addEventListener('storage', handleStorage)
+        return () => window.removeEventListener('storage', handleStorage)
+    }, [])
+
     return (
         <header className="navbar">
             <nav className="container navbar__container">
@@ -41,6 +48,12 @@ function Navbar() {
                     <li><a href="#items" onClick={() => setIsOpen(false)}>{lang === 'ru' ? 'Предметы' : 'Items'}</a></li>
                     <li><a href="https://saikiongrodus.freeflarum.com" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)}>{lang === 'ru' ? 'Форум' : 'Forum'}</a></li>
                     <li><a href="#blog" onClick={() => setIsOpen(false)}>{lang === 'ru' ? 'Блог' : 'Blog'}</a></li>
+                    {!hasToken && (
+                        <li><Link to="/login" className="btn btn--primary" onClick={() => setIsOpen(false)}>{lang === 'ru' ? 'Войти' : 'Login'}</Link></li>
+                    )}
+                    {hasToken && (
+                        <li><Link to="/profile" onClick={() => setIsOpen(false)}><User size={28} color="#ffd166" /></Link></li>
+                    )}
                     <li><LanguageSwitcher /></li>
                 </ul>
 
