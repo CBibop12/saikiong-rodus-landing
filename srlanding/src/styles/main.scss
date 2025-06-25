@@ -42,28 +42,88 @@ img {
 
 .btn {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s;
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
 
     &--primary {
         background: $primary;
         color: $dark;
+        box-shadow: 0 4px 15px rgba($primary, 0.3);
 
         &:hover {
-            background: lighten($primary, 10%);
+            background: lighten($primary, 5%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba($primary, 0.4);
+        }
+
+        &:active {
+            transform: translateY(0);
         }
     }
 
     &--outline {
+        background: transparent;
+        color: $light;
         border: 2px solid $light;
+        box-shadow: 0 4px 15px rgba($light, 0.1);
 
         &:hover {
             background: $light;
             color: $dark;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba($light, 0.2);
         }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    &--outline-primary {
+        background: transparent;
+        color: $primary;
+        border: 2px solid $primary;
+        box-shadow: 0 4px 15px rgba($primary, 0.2);
+
+        &:hover {
+            background: $primary;
+            color: $dark;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba($primary, 0.3);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    &--small {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
