@@ -25,7 +25,7 @@ function HeroSection() {
                             <Link to="/register" className="btn btn--outline-primary">{lang === 'ru' ? 'Создать аккаунт' : 'Sign up'}</Link>
                         </>
                     ) : (
-                        <a href="https://saikiong-rodus-online.vercel.app" target="_blank" rel="noopener noreferrer" className="btn btn--primary">{lang === 'ru' ? 'Играть' : 'Play'}</a>
+                        <a href={`https://saikiong-rodus-online.vercel.app/?token=${localStorage.getItem('srUserToken')}`} target="_blank" rel="noopener noreferrer" className="btn btn--primary">{lang === 'ru' ? 'Играть' : 'Play'}</a>
                     )}
                 </div>
             </div>
