@@ -15,7 +15,7 @@ function ChatWindow({ chat, friendUsername, friendAvatar, onClose, currentUserId
     const socketRef = useRef(null);
     const [isFriendTyping, setIsFriendTyping] = useState(false);
 
-    const API_URL = import.meta.env.VITE_API_URL || 'https://saikiongrodus-backend-e47b3de7cf19.herokuapp.com';
+    const API_URL = import.meta.env.VITE_API_URL || 'https://saikiong-rodus-auth-c8c14634e053.herokuapp.com';
 
     useEffect(() => {
         if (chat?._id) {

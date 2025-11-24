@@ -1,4 +1,4 @@
-const API_URL = import.meta.env.VITE_API_URL || 'https://saikiongrodus-backend-e47b3de7cf19.herokuapp.com';
+const API_URL = import.meta.env.VITE_API_URL || 'https://saikiong-rodus-auth-c8c14634e053.herokuapp.com';
 
 async function handleResponse(res) {
     const data = await res.json().catch(() => null);
